@@ -28,7 +28,7 @@ There are currently two ways to install the plugin on Unity base on what you hav
      #+ATTR_LATEX: :width 10cm
      #+CAPTION: Opening the NethereumAsset package and importing objects.
      #+NAME: fig:01
-     [[./unity3d-plugin/docs/image4.png]]
+     [[./docs/image4.png]]
 
    - After the installation is done, the plugin will be available inside the ~plugins~ folder that's been created.
 
@@ -39,14 +39,14 @@ There are currently two ways to install the plugin on Unity base on what you hav
      #+ATTR_LATEX: :width 10cm
      #+CAPTION: Creating folder inside the Unity project directory.
      #+NAME: fig:02
-     [[./unity3d-plugin/docs/image5.png]]
+     [[./docs/image5.png]]
 
    - Place the *~NethereumPlugin.dll~* inside the ~plugins~ folder.
 
      #+ATTR_LATEX: :width 10cm
      #+CAPTION: Copying the plugin to the plugins folder.
      #+NAME: fig:03
-     [[./unity3d-plugin/docs/image6.png]]
+     [[./docs/image6.png]]
 
 After finishing the plugin installation you must set now the .NET environment.
 
@@ -56,7 +56,7 @@ After finishing the plugin installation you must set now the .NET environment.
   #+ATTR_LATEX: :width 10cm
   #+CAPTION: Changing the .NET environment.
   #+NAME: fig:04
-  [[./unity3d-plugin/docs/image2.png]]
+  [[./docs/image2.png]]
 
 ** Plugin Usage
 
@@ -92,18 +92,23 @@ This are the functionalities offered by the plugin.
 |                 |                            | - Amount        | Amount to be sent to other app.                |                                      |
 |                 |                            | - ReturnLink    | Callback method of your app.                   |                                      |
 |                 |                            |                 |                                                |                                      |
-| InitUser        | Creates a new user.        | - URL           | URL of the backend.                            | String containing the session token. |
+| InitUser        | Creates a new user.        | - URL           | URL of the user backend.                       | String containing the session token. |
 |                 |                            | - IDFV          | ID for vendor.                                 |                                      |
 |                 |                            | - CoinId        | ID of the coin to be use.                      |                                      |
 |                 |                            | - Amount        | Amount of coin to initialize user.             |                                      |
 |                 |                            |                 |                                                |                                      |
-| UpdateUser      | Updates the coin amount    | - URL           | URL of the backend.                            | None.                                |
+| UpdateUser      | Updates the coin amount    | - URL           | URL of the user backend.                       | None.                                |
 |                 | of user.                   | - Amount        | Coin amount to be added or subtracted to user. |                                      |
 |                 |                            | - SessionToken  | Session token received from InitUser.          |                                      |
 |                 |                            |                 |                                                |                                      |
-| GetUser         | Retrieves the user coins   | - URL           | URL of the backend.                            | Returns the coin amount of the user. |
+| GetUser         | Retrieves the user coins   | - URL           | URL of the user backend.                       | Returns the coin amount of the user. |
 |                 | amount given its session   | - SessionToken  | Session token received from InitUser.          |                                      |
 |                 | cookie.                    |                 |                                                |                                      |
+
+*Backend Reference*
+
+- User Endpoints URL Backend: [[https://hr2whr9qwa.execute-api.us-east-2.amazonaws.com/dev][https://hr2whr9qwa.execute-api.us-east-2.amazonaws.com/dev]]
+- Coin Endpoints URL Backend: [[https://6a1eeikwe6.execute-api.us-east-2.amazonaws.com/dev][https://6a1eeikwe6.execute-api.us-east-2.amazonaws.com/dev]]
 
 #+LATEX: \end{landscape}
 #+LATEX: \restoregeometry

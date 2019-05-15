@@ -1,4 +1,4 @@
-% Created 2019-05-15 Wed 15:14
+% Created 2019-05-15 Wed 15:24
 % Intended LaTeX compiler: xelatex
 \documentclass[a4paper, 11pt, titlepage]{article}
 \usepackage{graphicx}
@@ -38,9 +38,9 @@
 The scope of this project is to create a Unity asset that will serve as an interface of sorts for the Nethereum library. The asset will expose some functionalities to make it easier to integrate Ethereum on an application developed using Unity.
 
 \section{The Nethereum Plugin}
-\label{sec:orga4e7dc9}
+\label{sec:orgb276150}
 \subsection{Plugin Installation}
-\label{sec:org54db642}
+\label{sec:org9e4a522}
 
 There are currently two ways to install the plugin on Unity base on what you have. To start off, run Unity Hub and open your project. Choose the installation method that suites you below.
 
@@ -53,8 +53,8 @@ There are currently two ways to install the plugin on Unity base on what you hav
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm]{./unity3d-plugin/docs/image4.png}
-\caption{\label{fig:orgb63ead7}
+\includegraphics[width=10cm]{./docs/image4.png}
+\caption{\label{fig:orgc7fea71}
 Opening the NethereumAsset package and importing objects.}
 \end{figure}
 
@@ -68,8 +68,8 @@ Opening the NethereumAsset package and importing objects.}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm]{./unity3d-plugin/docs/image5.png}
-\caption{\label{fig:org49a69ca}
+\includegraphics[width=10cm]{./docs/image5.png}
+\caption{\label{fig:orga50ea65}
 Creating folder inside the Unity project directory.}
 \end{figure}
 
@@ -77,8 +77,8 @@ Creating folder inside the Unity project directory.}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm]{./unity3d-plugin/docs/image6.png}
-\caption{\label{fig:org280810e}
+\includegraphics[width=10cm]{./docs/image6.png}
+\caption{\label{fig:org6ad36b0}
 Copying the plugin to the plugins folder.}
 \end{figure}
 \end{itemize}
@@ -92,14 +92,14 @@ After finishing the plugin installation you must set now the .NET environment.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm]{./unity3d-plugin/docs/image2.png}
-\caption{\label{fig:orge1db561}
+\includegraphics[width=10cm]{./docs/image2.png}
+\caption{\label{fig:org43199fe}
 Changing the .NET environment.}
 \end{figure}
 \end{itemize}
 
 \subsection{Plugin Usage}
-\label{sec:orge521ee7}
+\label{sec:orgb818338}
 
 Once the plugin has been correctly installed on your project, you can start using it. To do so, first you will have to create an instance of the plugin's class:
 
@@ -111,7 +111,7 @@ var pluginInstance = new NethereumPlugin();
 The instance will expose all the available methods for you to use.
 
 \section{API Documentation}
-\label{sec:org1a0d7cc}
+\label{sec:org92a5a0b}
 
 This are the functionalities offered by the plugin.
 
@@ -119,7 +119,7 @@ This are the functionalities offered by the plugin.
 \newgeometry{margin=1cm}
 \begin{landscape}
 \begin{longtable}{lllll}
-\caption{\label{tab:orged6cd53}
+\caption{\label{tab:org6eb3795}
 API description.}
 \\
 Function Name & Description & Input & Input Description & Output\\
@@ -146,19 +146,26 @@ DeepLink & Method to deep link to & - AppUri & Base URI of the app to communicat
  &  & - Amount & Amount to be sent to other app. & \\
  &  & - ReturnLink & Callback method of your app. & \\
  &  &  &  & \\
-InitUser & Creates a new user. & - URL & URL of the backend. & String containing the session token.\\
+InitUser & Creates a new user. & - URL & URL of the user backend. & String containing the session token.\\
  &  & - IDFV & ID for vendor. & \\
  &  & - CoinId & ID of the coin to be use. & \\
  &  & - Amount & Amount of coin to initialize user. & \\
  &  &  &  & \\
-UpdateUser & Updates the coin amount & - URL & URL of the backend. & None.\\
+UpdateUser & Updates the coin amount & - URL & URL of the user backend. & None.\\
  & of user. & - Amount & Coin amount to be added or subtracted to user. & \\
  &  & - SessionToken & Session token received from InitUser. & \\
  &  &  &  & \\
-GetUser & Retrieves the user coins & - URL & URL of the backend. & Returns the coin amount of the user.\\
+GetUser & Retrieves the user coins & - URL & URL of the user backend. & Returns the coin amount of the user.\\
  & amount given its session & - SessionToken & Session token received from InitUser. & \\
  & cookie. &  &  & \\
 \end{longtable}
+
+\textbf{Backend Reference}
+
+\begin{itemize}
+\item User Endpoints URL Backend: \href{https://hr2whr9qwa.execute-api.us-east-2.amazonaws.com/dev}{https://hr2whr9qwa.execute-api.us-east-2.amazonaws.com/dev}
+\item Coin Endpoints URL Backend: \href{https://6a1eeikwe6.execute-api.us-east-2.amazonaws.com/dev}{https://6a1eeikwe6.execute-api.us-east-2.amazonaws.com/dev}
+\end{itemize}
 
 \end{landscape}
 \restoregeometry
